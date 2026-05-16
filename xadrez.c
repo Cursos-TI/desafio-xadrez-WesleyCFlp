@@ -56,26 +56,42 @@ int main() {                                         // Jogo de Xadrez e C
             printf("\nTorre preta avançou 5 casas à direita!\n");
 
             // Movimento do bispo utilizando while
-            int j = 1;
+            int i = 1;
             printf("\nBispo branco está se movendo!\n");
-            while (j <= 5) {
-                j += 1;
+            while (i <= 5) {
+                i ++;
                 printf("\nCima Direita");
             }
             printf("\n");
             printf("\nBispo branco avançou 5 casas na diagonal para cima à direita!\n");
     
             // Movimento da rainha utilizando do-while
-            int k = 0;
+            int j = 0;
             printf("\nRainha preta está se movendo!\n");
             do {
                 printf("\nEsquerda");
-                k += 1;
-            } while (k < 8);
+                j ++;
+            } while (j < 8);
             printf("\n");
-            printf("\nRainha preta se moveu 8 casas à esquerda!\n");
+            printf("\nRainha preta avançou 8 casas à esquerda!\n");
+
+                                                  // Nível Aventureiro - Movimentação do Cavalo
+            // Movimento do cavalo utilizando loops alinhados
+            printf("\nCavalo branco está se movendo!\n");
+            int k = 1;
+            for (int i = 1; i == 1; i++) {
+                do {
+                    printf("Baixo\n");
+                    k ++;
+                } while (k <= 2);
+                printf("Esquerda\n");
+                printf("\n");
+            }
+            printf("Cavalo brando avançou 2 casas para baixo e uma casa à esquerda!\n");
 
             printf("\nJogo finalizado!\n");
+            printf("\n");
+            play = false;
             break;
 
         case 3: 
@@ -96,10 +112,8 @@ int main() {                                         // Jogo de Xadrez e C
             break;
         }
     }
+    
 
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
 
     // Nível Mestre - Funções Recursivas e Loops Aninhados
     // Sugestão: Substitua as movimentações das peças por funções recursivas.
