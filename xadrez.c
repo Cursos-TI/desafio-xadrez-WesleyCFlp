@@ -5,6 +5,50 @@
 // Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
 // O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
 
+// Função recursiva para movimento da torre
+
+void movimentoTorre(int movimento) {
+    if (movimento >= 1) {
+        printf("\nDireita");
+
+        movimentoTorre(movimento - 1);
+    }
+}
+
+// Função recursiva para movimento do bispo
+
+void movimentoBispo(int movimento) {
+    int movimentoHorizontal = 1;
+
+    if (movimento >= 1) {
+        for (int movimentoVertical = 1; movimentoVertical >= 1; movimentoVertical--) {
+        while (movimentoHorizontal == 1) {
+            printf("\nDireita");
+            movimentoHorizontal --;
+        }
+        printf(", Cima");
+        }
+
+        movimentoBispo(movimento - 1);  
+    }
+    
+}
+
+// Função recursiva para movimento da rainha
+
+void movimentoRainha(int movimento) {
+    if (movimento >= 1) {
+        do {
+
+        printf("\nEsquerda");
+        movimento --;
+        
+    } while (movimento >= 1);
+
+    movimentoRainha(movimento - 1);
+    }
+}
+
 int main() {                                         // Jogo de Xadrez e C
 
     // Nível Novato - Movimentação das Peças
@@ -49,46 +93,39 @@ int main() {                                         // Jogo de Xadrez e C
 
             // Movimento da torre utilizando for
             printf("\nTorre preta está se movendo!\n");
-            for (int i = 1; i <= 5; i++) {
-                printf("\nDireita");
-            }
+            movimentoTorre(5);
             printf("\n");
             printf("\nTorre preta avançou 5 casas à direita!\n");
 
             // Movimento do bispo utilizando while
-            int i = 1;
             printf("\nBispo branco está se movendo!\n");
-            while (i <= 5) {
-                i ++;
-                printf("\nCima Direita");
-            }
+            movimentoBispo(5);
             printf("\n");
             printf("\nBispo branco avançou 5 casas na diagonal para cima à direita!\n");
     
             // Movimento da rainha utilizando do-while
-            int j = 0;
             printf("\nRainha preta está se movendo!\n");
-            do {
-                printf("\nEsquerda");
-                j ++;
-            } while (j < 8);
+            movimentoRainha(8);
             printf("\n");
             printf("\nRainha preta avançou 8 casas à esquerda!\n");
 
-                                                  // Nível Aventureiro - Movimentação do Cavalo
             // Movimento do cavalo utilizando loops alinhados
             printf("\nCavalo branco está se movendo!\n");
-            int k = 1;
-            for (int i = 1; i == 1; i++) {
+
+            // Loops alinhados com múltiplas variáveis para movimento do cavalo
+
+            for (int i = 1, j = 1; j == 1; j++) {
                 do {
-                    printf("Baixo\n");
-                    k ++;
-                } while (k <= 2);
-                printf("Esquerda\n");
+                    printf("\nCima");
+                    i ++;
+                } while (i <= 2);
+
+                printf("\nDireita");
                 printf("\n");
             }
-            printf("Cavalo brando avançou 2 casas para baixo e uma casa à esquerda!\n");
+            printf("\nCavalo brando avançou 2 casas para cima e uma casa à direita!");
 
+            printf("\n");
             printf("\nJogo finalizado!\n");
             printf("\n");
             play = false;
@@ -112,15 +149,6 @@ int main() {                                         // Jogo de Xadrez e C
             break;
         }
     }
-    
-
-
-    // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
-
-    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
 
     return 0;
 }
